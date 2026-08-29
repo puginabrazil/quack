@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+@property --rgb-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes rgb-spin {
+  0% {
+    --rgb-angle: 0deg;
+  }
+  100% {
+    --rgb-angle: 360deg;
+  }
+}
+
+@keyframes float-gentle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-rgb-glow {
+  background: conic-gradient(
+    from var(--rgb-angle),
+    #3b82f6,
+    #8b5cf6,
+    #ec4899,
+    #ef4444,
+    #f59e0b,
+    #10b981,
+    #06b6d4,
+    #3b82f6
+  );
+  animation: rgb-spin 4s linear infinite;
+}
